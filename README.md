@@ -21,3 +21,9 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,threejs,redux,django,tailwind,kubernetes,materialui,graphql,vue,nuxtjs,aws,ts,go,java,sass,mongodb,mysql,postgres,php,sqlite,py,solidity,js,docker,nextjs,ethereum,rust,angular&perline=10" />
+  </a>
+</p>
