@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>My Skills</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px;
+      min-height: 100vh;
+      color: #f8fafc;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(14, 165, 233, 0.22),
+          transparent 35%
+        ),
+        #080c13;
+    }
+
+    h1 {
+      max-width: 1400px;
+      margin: 0 auto 28px;
+      font-size: 36px;
+      text-align: center;
+      letter-spacing: 1px;
+      color: #f8fafc;
+      animation: titleGlow 2.5s ease-in-out infinite alternate;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      max-width: 1400px;
+      margin: 0 auto;
+      border: 1px solid #334155;
+      background: #0b111b;
+      box-shadow:
+        0 0 25px rgba(14, 165, 233, 0.18),
+        inset 0 0 30px rgba(14, 165, 233, 0.05);
+    }
+
+    .skill {
+      position: relative;
+      min-height: 180px;
+      overflow: hidden;
+      padding: 24px 10px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      text-align: center;
+      border: 1px solid #334155;
+      background: linear-gradient(
+        145deg,
+        rgba(30, 41, 59, 0.25),
+        rgba(15, 23, 42, 0.85)
+      );
+
+      animation: cardAppear 0.8s ease both;
+      transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+    .skill::before {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: -90%;
+      width: 45%;
+      height: 300%;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+      );
+
+      transform: rotate(25deg);
+      animation: shine 5s ease-in-out infinite;
+    }
+
+    .skill::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid transparent;
+      animation: borderPulse 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .skill img {
+      position: relative;
+      z-index: 2;
+
+      width: 78px;
+      height: 78px;
+      padding: 10px;
+      object-fit: contain;
+      border-radius: 17px;
+      background: #161e2b;
+
+      filter:
+        drop-shadow(0 0 6px rgba(56, 189, 248, 0.45))
+        drop-shadow(0 0 15px rgba(56, 189, 248, 0.2));
+
+      animation:
+        iconMotion 3.2s ease-in-out infinite,
+        iconGlow 2.4s ease-in-out infinite alternate;
+    }
+
+    .skill span {
+      position: relative;
+      z-index: 2;
+
+      font-size: 18px;
+      font-weight: 600;
+      color: #e2e8f0;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+    }
+
+    .badge {
+      position: relative;
+      z-index: 2;
+
+      width: 78px;
+      height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 18px;
+      background: linear-gradient(135deg, #ef4444, #991b1b);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.25;
+
+      box-shadow: 0 0 22px rgba(239, 68, 68, 0.6);
+      animation: badgeMotion 2.5s ease-in-out infinite;
+    }
+
+    .skill:hover {
+      z-index: 5;
+      transform: translateY(-12px) scale(1.08) rotateX(4deg);
+
+      background: linear-gradient(
+        145deg,
+        rgba(14, 116, 144, 0.4),
+        rgba(30, 41, 59, 0.95)
+      );
+
+      box-shadow:
+        0 0 20px rgba(34, 211, 238, 0.55),
+        0 0 50px rgba(14, 165, 233, 0.3),
+        inset 0 0 24px rgba(56, 189, 248, 0.16);
+    }
+
+    .skill:hover img {
+      animation: hoverIcon 0.8s ease-in-out infinite alternate;
+      filter:
+        drop-shadow(0 0 10px #22d3ee)
+        drop-shadow(0 0 25px #0ea5e9);
+    }
+
+    .skill:hover span {
+      color: #67e8f9;
+    }
+
+    /* Different animation speeds */
+    .skill:nth-child(2n) img {
+      animation-duration: 3.8s;
+    }
+
+    .skill:nth-child(3n) img {
+      animation-duration: 2.7s;
+      animation-direction: alternate-reverse;
+    }
+
+    .skill:nth-child(4n) img {
+      animation-duration: 4.2s;
+    }
+
+    /* Card entrance delay */
+    .skill:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .skill:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .skill:nth-child(3) {
+      animation-delay: 0.15s;
+    }
+
+    .skill:nth-child(4) {
+      animation-delay: 0.2s;
+    }
+
+    .skill:nth-child(5) {
+      animation-delay: 0.25s;
+    }
+
+    .skill:nth-child(6) {
+      animation-delay: 0.3s;
+    }
+
+    .skill:nth-child(7) {
+      animation-delay: 0.35s;
+    }
+
+    .skill:nth-child(8) {
+      animation-delay: 0.4s;
+    }
+
+    .skill:nth-child(9) {
+      animation-delay: 0.45s;
+    }
+
+    .skill:nth-child(10) {
+      animation-delay: 0.5s;
+    }
+
+    .skill:nth-child(11) {
+      animation-delay: 0.55s;
+    }
+
+    .skill:nth-child(12) {
+      animation-delay: 0.6s;
+    }
+
+    .skill:nth-child(13) {
+      animation-delay: 0.65s;
+    }
+
+    .skill:nth-child(14) {
+      animation-delay: 0.7s;
+    }
+
+    .skill:nth-child(15) {
+      animation-delay: 0.75s;
+    }
+
+    .skill:nth-child(16) {
+      animation-delay: 0.8s;
+    }
+
+    .skill:nth-child(17) {
+      animation-delay: 0.85s;
+    }
+
+    .skill:nth-child(18) {
+      animation-delay: 0.9s;
+    }
+
+    .skill:nth-child(19) {
+      animation-delay: 0.95s;
+    }
+
+    .skill:nth-child(20) {
+      animation-delay: 1s;
+    }
+
+    .skill:nth-child(21) {
+      animation-delay: 1.05s;
+    }
+
+    .skill:nth-child(22) {
+      animation-delay: 1.1s;
+    }
+
+    @keyframes cardAppear {
+      from {
+        opacity: 0;
+        transform: scale(0.6) translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes iconMotion {
+      0% {
+        transform: translateY(0) rotate(-3deg) scale(1);
+      }
+
+      25% {
+        transform: translateY(-8px) rotate(3deg) scale(1.04);
+      }
+
+      50% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+
+      75% {
+        transform: translateY(7px) rotate(-3deg) scale(0.97);
+      }
+
+      100% {
+        transform: translateY(0) rotate(3deg) scale(1);
+      }
+    }
+
+    @keyframes hoverIcon {
+      from {
+        transform: rotate(-8deg) scale(1.05);
+      }
+
+      to {
+        transform: rotate(8deg) scale(1.2);
+      }
+    }
+
+    @keyframes iconGlow {
+      from {
+        filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.35));
+      }
+
+      to {
+        filter:
+          drop-shadow(0 0 10px rgba(34, 211, 238, 0.9))
+          drop-shadow(0 0 22px rgba(14, 165, 233, 0.55));
+      }
+    }
+
+    @keyframes badgeMotion {
+      0%,
+      100% {
+        transform: translateY(0) rotate(-3deg) scale(1);
+      }
+
+      50% {
+        transform: translateY(-9px) rotate(3deg) scale(1.08);
+      }
+    }
+
+    @keyframes shine {
+      0% {
+        left: -90%;
+      }
+
+      45%,
+      100% {
+        left: 150%;
+      }
+    }
+
+    @keyframes borderPulse {
+      0%,
+      100% {
+        border-color: rgba(51, 65, 85, 0.8);
+      }
+
+      50% {
+        border-color: rgba(34, 211, 238, 0.65);
+      }
+    }
+
+    @keyframes titleGlow {
+      from {
+        text-shadow: 0 0 8px #38bdf8;
+      }
+
+      to {
+        text-shadow:
+          0 0 12px #22d3ee,
+          0 0 30px #0284c7;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .skills-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skill {
+        min-height: 150px;
+      }
+
+      .skill img,
+      .badge {
+        width: 62px;
+        height: 62px;
+      }
+
+      .skill span {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>💻 Software and Tools</h1>
+
+  <div class="skills-grid">
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+        alt="HTML"
+      />
+      <span>HTML</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+        alt="CSS"
+      />
+      <span>CSS</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+        alt="Bootstrap"
+      />
+      <span>Bootstrap</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+        alt="Tailwind CSS"
+      />
+      <span>Tailwind CSS</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+        alt="React"
+      />
+      <span>React</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.simpleicons.org/nextdotjs/ffffff"
+        alt="Next.js"
+      />
+      <span>Next.js</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+        alt="JavaScript"
+      />
+      <span>JavaScript</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+        alt="TypeScript"
+      />
+      <span>TypeScript</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+        alt="Python"
+      />
+      <span>Python</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.simpleicons.org/express/ffffff"
+        alt="Express.js"
+      />
+      <span>Express.js</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+        alt="Java"
+      />
+      <span>Java</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+        alt="Spring Boot"
+      />
+      <span>Spring Boot</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+        alt="PHP"
+      />
+      <span>PHP</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+        alt="Laravel"
+      />
+      <span>Laravel</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+        alt="React Native"
+      />
+      <span>React Native</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+        alt="Git"
+      />
+      <span>Git</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.simpleicons.org/github/ffffff"
+        alt="GitHub"
+      />
+      <span>GitHub</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+        alt="MySQL"
+      />
+      <span>MySQL</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+        alt="PostgreSQL"
+      />
+      <span>PostgreSQL</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+        alt="MongoDB"
+      />
+      <span>MongoDB</span>
+    </div>
+
+    <div class="skill">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+        alt="Docker"
+      />
+      <span>Docker</span>
+    </div>
+
+    <div class="skill">
+      <div class="badge">JLPT<br />N2</div>
+      <span>Japanese</span>
+    </div>
+
+  </div>
+</body>
+</html>
