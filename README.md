@@ -24,7 +24,7 @@
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/hteinlynnaung/hteinlynnaung-mrh/main/assets/skills-grid.gif"
+    src="./assets/skills-grid.gif"
     alt="Animated skills grid"
     width="100%"
   />
