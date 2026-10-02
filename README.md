@@ -22,4 +22,12 @@
 ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
+## 💻 Software and Tools
 
+<p align="center">
+  <img
+    src="./assets/skills-grid.gif"
+    alt="Animated skills grid"
+    width="100%"
+  />
+</p>
