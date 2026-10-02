@@ -1,5 +1,7 @@
 ## Hello! Welcome to my profile! 👋
 
+## <h4>My name is Htein Lynn Aung.I'm a Software Engineering Student at North Chiang Mai University.Currently,I'm deeply immersed in the fundamentals of Computer Science and the Software Development Life Cycle.I believe that building great software starts with a strong architectural foundation and a clear understanding of the development process.My journey doesn't stop at development.I'm highly motivated to expand my expertise into Cloud Engineering and DevOps.I'm passionate about bridging the gap between code and infrastructure to build scalable, efficient and automated systems.</h4>
+
 ## 💻 Programming Languages
 
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
