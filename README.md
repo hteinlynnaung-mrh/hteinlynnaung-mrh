@@ -2,6 +2,8 @@
 
 ## <h4>My name is Htein Lynn Aung.I'm a Software Engineering Student at North Chiang Mai University.Currently,I'm deeply immersed in the fundamentals of Computer Science and the Software Development Life Cycle.I believe that building great software starts with a strong architectural foundation and a clear understanding of the development process.My journey doesn't stop at development.I'm highly motivated to expand my expertise into Cloud Engineering and DevOps.I'm passionate about bridging the gap between code and infrastructure to build scalable, efficient and automated systems.</h4>
 
+## <h4>こんにちは、ノースチェンマイ大学でソフトウェア工学を学んでいる ティン リン アウンです。現在は、コンピュータサイエンスの基礎とソフトウェア開発ライフサイクル（SDLC）に深く没頭しています。優れたソフトウェアの構築は、強力なアーキテクチャの基盤と開発プロセスの明確な理解から始まると信じています。私の旅は開発に留まりません。クラウドエンジニアリングやDevOpsへの専門知識の拡大に非常に意欲的です。コードとインフラストラクチャのギャップを埋め、スケーラブルで効率的、かつ自動化されたシステムを構築することに情熱を注いでいます。</h4>
+
 ## 💻 Programming Languages
 
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
