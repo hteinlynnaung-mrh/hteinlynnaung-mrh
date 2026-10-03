@@ -571,9 +571,11 @@
 
     .badge:after {
       display: block;
-      inset: -8px;
-      border: 2px dotted var(--tone);
-      opacity: .8;
+      inset: -10px;
+      border: 3px dotted color-mix(in srgb, var(--tone), white 28%);
+      border-radius: 50%;
+      opacity: .92;
+      filter: drop-shadow(0 0 5px color-mix(in srgb, var(--tone), transparent 45%));
       animation: orbit 5s linear infinite;
     }
 
